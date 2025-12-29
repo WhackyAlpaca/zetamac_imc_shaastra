@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMC Trading X Shaastra</title>
+    <title>IMC Trading X Shaastra 2026</title>
     <!-- Oswald Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,18 +35,20 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 40px 20px;
             overflow-x: hidden;
         }
 
-        /* Top Right Logo Placeholder */
+        /* Centered Logo Styling */
         .logo-container {
-            position: absolute;
-            top: 24px;
-            right: 24px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px; /* Spacing between logo and card */
         }
         .logo-container img {
-            max-width: 120px;
+            max-width: 300px; /* Increased size */
+            width: 80%; /* Responsive width */
             height: auto;
         }
 
@@ -176,13 +178,14 @@
         @media (max-width: 600px) {
             h1 { font-size: 48px; line-height: 52px; }
             .settings-grid { grid-template-columns: 1fr; }
+            .logo-container img { max-width: 200px; }
         }
     </style>
 </head>
 <body>
 
     <div class="logo-container">
-        <!-- Replace 'logo.png' with your actual filename -->
+        <!-- Center-aligned and bigger logo -->
         <img src="logo.png" alt="Logo" onerror="this.style.display='none'">
     </div>
 
@@ -298,7 +301,6 @@
                     currentAnswer = n1 + n2;
                     problemDisplay.innerText = `${n1} + ${n2}`;
                 } else {
-                    // Ensure positive result for simplicity like zetamac
                     const bigger = Math.max(n1, n2);
                     const smaller = Math.min(n1, n2);
                     currentAnswer = bigger - smaller;
@@ -314,7 +316,6 @@
                     currentAnswer = n1 * n2;
                     problemDisplay.innerText = `${n1} × ${n2}`;
                 } else {
-                    // Division: generate by multiplication to ensure integer result
                     const product = n1 * n2;
                     currentAnswer = n1;
                     problemDisplay.innerText = `${product} ÷ ${n2}`;
